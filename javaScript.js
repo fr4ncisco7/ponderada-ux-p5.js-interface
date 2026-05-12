@@ -1,8 +1,8 @@
 let historico = [
-  { id: "SAFRA_JAN", lucro: 1250.50, r2: 0.02, taxa: 0.0175, ativos: 2, descricao: "Estratégia Conservadora" },
-  { id: "SAFRA_FEV", lucro: 2840.00, r2: 0.05, taxa: 0.0175, ativos: 4, descricao: "Expansão de Mercado" },
-  { id: "SAFRA_MAR", lucro: 1950.20, r2: 0.03, taxa: 0.0175, ativos: 3, descricao: "Ajuste de Risco Médio" },
-  { id: "SAFRA_ABR", lucro: 3100.75, r2: 0.08, taxa: 0.0175, ativos: 5, descricao: "Apetite Agressivo" }
+  { id: "SAFRA_JAN", lucro: 1250.50, r2: 0.02, taxa: 0.0175, ativos: 2},
+  { id: "SAFRA_FEV", lucro: 2840.00, r2: 0.05, taxa: 0.0175, ativos: 4},
+  { id: "SAFRA_MAR", lucro: 1950.20, r2: 0.03, taxa: 0.0175, ativos: 3},
+  { id: "SAFRA_ABR", lucro: 3100.75, r2: 0.08, taxa: 0.0175, ativos: 5}
 ];
 
 let clientes = [
@@ -37,7 +37,6 @@ function draw() {
 }
 
 function desenharMenuLateral() {
-  // Painel Lateral
   fill(20, 28, 45);
   noStroke();
   rect(0, 0, 250, height);
@@ -48,12 +47,11 @@ function desenharMenuLateral() {
   text("HISTÓRICO DE SAFRAS", 120, 40);
   textStyle(NORMAL);
   
-  // Renderizar Botões do Histórico
   for (let i = 0; i < historico.length; i++) {
     let item = historico[i];
     let y = 70 + (i * 80);
     
-    // Detectar Mouse
+
     let isHover = mouseX > 10 && mouseX < 240 && mouseY > y && mouseY < y + 70;
     fill(isHover ? (cenarioSelecionado === item ? '#00d4ff' : '#304560') : (cenarioSelecionado === item ? '#00d4ff' : '#253045'));
     
@@ -66,13 +64,11 @@ function desenharMenuLateral() {
     text(item.id, 70, y + 25);
     textStyle(NORMAL);
     textSize(11);
-    text(item.descricao, 87, y + 45);
     text("Lucro: R$ " + item.lucro.toFixed(2), 87, y + 60);
   }
 }
 
 function mousePressed() {
-  // Verificar clique nos cards do menu
   for (let i = 0; i < historico.length; i++) {
     let y = 70 + (i * 80);
     if (mouseX > 10 && mouseX < 240 && mouseY > y && mouseY < y + 70) {
