@@ -39,4 +39,4 @@ O protótipo final, desenvolvido em **p5.js**:
 
 ---
 
-**Importante:** Devido ao pouco tempo para desenvolver esta visualização, acabei utilizando Inteligência Artificial mais do que gostaria para concluir o projeto.😔
+**Importante:** Devido ao pouco tempo para desenvolver a visualização, acabei utilizando Inteligência Artificial mais do que gostaria para concluir a ponderada.😔
